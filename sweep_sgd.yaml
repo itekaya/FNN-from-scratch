@@ -1,0 +1,37 @@
+program: Sweep.py
+method: random
+
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  optimizer:
+    value: "sgd"
+
+  learning_rate:
+    values: [0.0001, 0.0005, 0.001, 0.005]
+
+  batch_size:
+    values: [32, 64, 128, 256]
+
+  num_hidden_layers:
+    values: [1, 2, 3, 4]
+
+  n_hidden_units:
+    values: [64, 128, 256, 512]
+
+  activation_hidden:
+    values: ["relu", "tanh", "sigmoid"]
+
+  weights_init:
+    values: ["HeNor", "HeUni", "XavNor", "XavUni"]
+
+  loss_name:
+    values: ["cross_entropy", "mse"]
+
+  l2_coeff:
+    values: [0.0, 0.0001, 0.001]
+
+  grad_clip:
+    values: [0.0, 0.1, 0.5, 1.0]
